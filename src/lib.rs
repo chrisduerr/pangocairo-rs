@@ -8,6 +8,7 @@ extern crate pango;
 extern crate pango_sys;
 #[macro_use]
 extern crate glib;
+extern crate gobject_sys as gobject_ffi;
 
 use glib::translate::*;
 

@@ -30,3 +30,7 @@ version = "0.1.3"
 [dev-dependencies.gtk]
 git = "https://github.com/gtk-rs/gtk"
 version = "0.1.3"
+
+[dependencies.gobject-sys]
+git = "https://github.com/gtk-rs/sys"
+version = "0.3.4"

@@ -1,6 +1,7 @@
 use cairo;
 use ffi;
 use glib::translate::*;
+use gobject_ffi;
 use pango;
 use pango_sys;
 

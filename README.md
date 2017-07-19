@@ -1,5 +1,7 @@
 # pangocairo
 
+[![Build Status](https://travis-ci.org/RazrFalcon/pangocairo.svg-rs?branch=master)](https://travis-ci.org/RazrFalcon/pangocairo-rs)
+
 [![Version](https://img.shields.io/crates/v/pangocairo.svg)](https://img.shields.io/crates/v/pangocairo.svg)
 
 [PangoCairo](https://developer.gnome.org/pango/stable/pango-Cairo-Rendering.html) bindings for Rust.

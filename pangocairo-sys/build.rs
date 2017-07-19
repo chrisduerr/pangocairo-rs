@@ -15,8 +15,8 @@ fn main() {
 
 fn find() -> Result<(), Error> {
     let package_name = "pangocairo";
-    let shared_libs = ["pango-1.0", "pangocairo-1.0", "pango-1.0", "pangoft2-1.0"];
-    let version = "1.38";
+    let shared_libs = ["pango-1.0", "pangocairo-1.0", "pangoft2-1.0"];
+    let version = "1.36";
 
     if let Ok(lib_dir) = env::var("GTK_LIB_DIR") {
         for lib_ in shared_libs.iter() {

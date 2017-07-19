@@ -1,6 +1,6 @@
 # pangocairo
 
-[![Build Status](https://travis-ci.org/RazrFalcon/pangocairo.svg-rs?branch=master)](https://travis-ci.org/RazrFalcon/pangocairo-rs)
+[![Build Status](https://img.shields.io/travis/RazrFalcon/pangocairo-rs)](https://travis-ci.org/RazrFalcon/pangocairo-rs)
 
 [![Version](https://img.shields.io/crates/v/pangocairo.svg)](https://img.shields.io/crates/v/pangocairo.svg)
 

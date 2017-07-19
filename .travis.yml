@@ -4,3 +4,6 @@ rust:
 before_install:
   - sudo apt-get -qq update
   - sudo apt-get install -y libpango1.0-dev libatk1.0-dev
+script:
+  # We do not run tests, because they require all the gtk.
+  - cargo build --verbose --all

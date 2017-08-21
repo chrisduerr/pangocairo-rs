@@ -21,7 +21,7 @@ fn main() {
         let font = pango::FontDescription::from_string("Sans Bold 27");
 
         let layout = cr.create_pango_layout();
-        layout.set_text("Hello", 5);
+        layout.set_text("Hello");
         layout.set_font_description(Some(&font));
 
         let n_words = 12;

@@ -8,6 +8,7 @@ use std::f64::consts::PI;
 use cairo::Context;
 use gtk::prelude::*;
 use gtk::DrawingArea;
+use pango::LayoutExt;
 use pangocairo::CairoContextExt;
 
 fn main() {

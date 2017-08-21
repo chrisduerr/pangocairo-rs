@@ -8,6 +8,8 @@ extern crate pango;
 extern crate pango_sys;
 #[macro_use]
 extern crate glib;
+extern crate glib_sys as glib_ffi;
+extern crate gobject_sys as gobject_ffi;
 
 use glib::translate::*;
 
@@ -76,9 +78,9 @@ pub trait CairoContextExt {
     fn show_pango_layout_line(&self, line: &pango::LayoutLine);
     fn error_underline_path(&self, x: f64, y: f64, width: f64, height: f64);
     fn show_error_underline(&self, x: f64, y: f64, width: f64, height: f64);
-    // fn show_glyph_item(&self, text: &str, glyph_item: /*unimplemented*/ pango::GlyphItem);
-    // fn glyph_string_path(&self, font: /*unimplemented*/ pango::Font, glyphs: pango::GlyphString);
-    // fn show_glyph_string(&self, font: /*unimplemented*/ pango::Font, glyphs: pango::GlyphString);
+    fn show_glyph_item(&self, text: &str, glyph_item: &pango::GlyphItem);
+    fn glyph_string_path(&self, font: &pango::Font, glyphs: &pango::GlyphString);
+    fn show_glyph_string(&self, font: &pango::Font, glyphs: &pango::GlyphString);
 }
 
 impl CairoContextExt for cairo::Context {
@@ -122,7 +124,27 @@ impl CairoContextExt for cairo::Context {
         unsafe { ffi::pango_cairo_show_error_underline(self.to_glib_none().0, x, y, width, height); };
     }
 
-    // ffi::pango_cairo_show_glyph_item
-    // ffi::pango_cairo_glyph_string_path
-    // ffi::pango_cairo_show_glyph_string
+    fn show_glyph_item(&self, text: &str, glyph_item: &pango::GlyphItem) {
+        unsafe { 
+            ffi::pango_cairo_show_glyph_item(self.to_glib_none().0, 
+                                             text.to_glib_none().0,
+                                             glyph_item.to_glib_none().0 as *mut pango_sys::PangoGlyphItem);
+        };
+    }
+
+    fn glyph_string_path(&self, font: &pango::Font, glyphs: &pango::GlyphString) {
+        unsafe {
+            ffi::pango_cairo_glyph_string_path(self.to_glib_none().0,
+                                               font.to_glib_none().0,
+                                               glyphs.to_glib_none().0 as *mut pango_sys::PangoGlyphString);
+        }
+    }
+
+    fn show_glyph_string(&self, font: &pango::Font, glyphs: &pango::GlyphString) {
+        unsafe {
+            ffi::pango_cairo_show_glyph_string(self.to_glib_none().0,
+                                               font.to_glib_none().0,
+                                               glyphs.to_glib_none().0 as *mut pango_sys::PangoGlyphString);
+        }
+    }
 }

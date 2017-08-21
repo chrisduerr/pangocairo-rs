@@ -8,8 +8,8 @@ license = "MIT"
 keywords = ["cairo", "pango"]
 
 [dependencies.pangocairo-sys]
-git = "https://github.com/daa84/pangocairo-rs"
-path = "pangocairo-sys"
+git = "https://github.com/razrfalcon/pangocairo-rs"
+#path = "pangocairo-sys"
 version = "0.4.0"
 
 [dependencies.glib]
